@@ -1,0 +1,60 @@
+The iCal NaturalEventAdder
+by Jeff Cleary
+
+
+INTRODUCTION
+------------
+  Adding a new event in iCal is painful.  The NaturalEventAdder makes it
+  easy to add events and make use of a calendar's ability to help you keep
+  track of your life.  This works by parsing a text input description of the 
+  new event and creating a new event directly in iCal.
+  
+  No need to reach for that mouse - just type a natural description of the
+  thing you want to remember and get on with your life.
+
+
+USAGE INSTRUCTIONS
+------------------
+  The NaturalEventAdder works in two modes:
+  
+  1) Command line: $ ./iCalNaturalEventAdder.py "Board meeting May 29th 4:30pm"
+  2) Graphical:  $ ./iCalNaturalEventAdder.py
+    ** Bonus Recommended Usage: Hook this up to a keyboard shortcut using 
+       Quicksilver or Spark and never leave the keyboard.
+  
+  Event string examples:
+    "Pick up dry cleaning tomorrow"
+    "Taxes deadline 4/14/2010 alert 1 day before"
+    "Har Mar Superstar concert friday 9pm"
+    "Hyperproductive conference call thursday 4pm alert 1 hour before"
+    "Return unwanted presents December 26th"
+    Use the 'in' modifier to attach to a particular calendar:
+      "dinner with friends saturday in Social"
+
+
+DEPENDENCIES
+------------
+  py-appscript - http://appscript.sourceforge.net/py-appscript/install.html
+  wxPython - http://www.wxpython.org/download.php
+
+
+COMPILATION INSTRUCTIONS
+------------------------
+  (Source:  http://svn.pythonmac.org/py2app/py2app/trunk/doc/index.html#installation )
+  Use py2app to create an OSX executable:
+    $ py2applet --make-setup iCalNaturalEventAdder.py 
+    $ rm -rf build dist
+    $ python setup.py py2app
+  
+
+FUTURE IMPROVEMENTS OF THE FUTURE
+---------------------------------
+
+  Size - 40MB compiled is way too big, but this comes from bundling in 
+  wxPython, appscript, etc.
+  More parsing - This version handles a basic set of expected event strings, 
+  but there are many more possibilities.
+  Confirmation Dialog - pretty this business up
+  Run in background - Instead of attaching this to a Quicksilver or Spark 
+  hotkey, would be nice to have it run in background.
+  
